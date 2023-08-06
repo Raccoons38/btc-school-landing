@@ -41,7 +41,9 @@ img {
 
 .primary-btn,
 .secondary-btn {
+    border: none;
     text-decoration: none;
+    outline:none;
     font-size: 14px;
     color: white;
     border-radius: 5px;
@@ -190,6 +192,8 @@ section#headline {
 
 .review-card { 
     text-align: center;
+    width: min(500px, 100%);
+    margin: 0 auto;
 }
 
 .review-card__user { 
@@ -221,4 +225,28 @@ section#headline {
 
 .bx-star, .bxs-star {
     color: #F3CD03;
+}
+
+#phone-input {
+    padding: 20px 15px;
+    outline: none;
+    border: none;
+}
+
+form { 
+    display: flex;
+    justify-content: center;
+}
+
+form input:first-child {
+    width: min(500px,100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+form input:last-child {
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
 }
