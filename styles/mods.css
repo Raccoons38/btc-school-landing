@@ -1,0 +1,47 @@
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-muted { 
+    color: #bdbdbd;
+}
+
+.text-secondary { 
+    color: var(--secondary-text-color);
+}
+.text-secondary-hightlighed {
+    color: var(--secondary-highlighted-text-color);
+}
+.price::after {
+    content: "₽"
+}
+
+.d-flex-r {
+    display: flex;
+    flex-direction: row;
+}
+
+.d-flex-c {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.g-lg { 
+    gap: 35px;
+}
+
+.g-md { 
+    gap: 30px;
+}
+
+.g-sm { 
+    gap: 10px;
+}

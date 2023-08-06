@@ -1,0 +1,48 @@
+.container {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/*  X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {  }
+
+/*  Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    section { 
+        margin: 80px 0;
+    }
+}
+
+/*  Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+    .col {
+        padding: 10px;
+    }
+    .row {
+        flex-direction: column;
+    }
+ }
+
+/*  Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {  }
+
+/*  X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {  }
+
+/*  XX-Large devices (larger desktops) */
+/*  No media query since the xxl breakpoint has no upper bound on its width */
