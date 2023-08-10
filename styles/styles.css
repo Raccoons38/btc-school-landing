@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
 
 @font-face {
     font-family: 'Neue Machina';
@@ -71,6 +71,9 @@ section {
     border-radius: 80px;
     width: min(640px, 100%);
     text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 #headline img {
@@ -190,4 +193,80 @@ ul.vebinar-program li::before {
 #footer h2 {
     font-size: 60px;
     color: white;
+}
+
+#popup { 
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 50px;
+    padding: 150px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    width: min(100%, 1000px);
+    overflow-y: scroll;
+}
+
+#popup h2 { 
+    font-family: var(--secondary-font-family);
+    color: var(--primary-bg-color);
+    font-size: 50px;
+    margin-bottom: 60px;
+}
+
+#popup.opened { 
+    display: block;
+    z-index: 1000;
+}
+
+#popup form { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+}
+
+input, textarea {
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 30px;
+    font-weight: 500;
+    border: 2px solid #9FB9CA;
+    font-family: var(--secondary-font-family);
+}
+
+input[type="submit"] { 
+    font-size:30px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+:is(input, textarea)::placeholder  { 
+    color: #9FB9CA;
+}
+
+body.with-popup::after { 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 16, 30, 0.60);
+    z-index: 100;
+}
+.close-popup {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 32px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
 }
