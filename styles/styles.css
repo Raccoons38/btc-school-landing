@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root {
+    --primary-text-color: #0066FF;
+
+    --primary-bg-color: #0E101E;
+    --secondary-bg-color: #000732;
+
+    --primary-font-family: 'Ubuntu';
+    --secondary-font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    font-family: var(--secondary-font-family); 
+    color: white;
+}
+
+main {
+    width: min(1920px, 100%);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--primary-font-family);
+    color: var(--primary-text-color);
+}
+
+h1 {
+    font-size: 110px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+h2 {
+    font-size: 70px; 
+    font-weight: 900;
+    margin-bottom: 120px;
+}
+
+
+.primary-btn {
+    color: var(--primary-bg-color);
+    background-color: #10D37A;
+    box-shadow: 0px 4px 60px 5px rgba(16, 211, 122, 0.40);
+    font-size: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 48px 160px;
+    border-radius: 80px;
+    width: min(640px, 100%);
+    text-align: center;
+}
+
+#headline img {
+    width: auto;
+    height: 760px;
+    max-height: inherit;
+}
+
+#headline .title { 
+    text-transform: uppercase;
+}
+
+#headline .subtitle {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 600; 
+}
+
+.headline__content { 
+    margin-block: 70px;
+    font-weight: 600;
+}
+
+.headline__content__title { 
+    font-size: 70px;
+}
+
+.headline__content__date-info { 
+    font-size: 50px;
+}
+
+section#what-you-will-learn .row {
+    gap: 100px;
+}
+
+.card { 
+    background-color: var(--secondary-bg-color);
+    font-size: 26px;
+    padding: 60px 90px 160px 60px;
+}
