@@ -1,7 +1,10 @@
+section {
+    margin-inline: 110px;
+}
+
 .row { 
     display: flex;
     flex-direction: row;
-    margin-inline: 110px;
 }
 
 .col { 
