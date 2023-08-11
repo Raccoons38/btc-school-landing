@@ -1,5 +1,5 @@
 const popup = document.getElementById('popup');
-const popupForm = popup.querySelector('form');
+const popupForm = document.getElementById('signUpForm');
 
 
 document.querySelectorAll('.open-signup-popup').forEach(btn => { 
@@ -15,11 +15,8 @@ popup.querySelector('.close-popup').addEventListener('click', (e) => {
     document.body.classList.remove('with-popup');
 });
 
-popupForm.querySelector('input[type="submit"]').onclick = null;
-
-popupForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
+const handleSubmit = async function (e = null) {
+    if (e) { e.preventDefault(); }
     const userForm = new FormData(popupForm);
     const response = await fetch('http://localhost:3000/', {
         method: 'POST',
@@ -32,9 +29,13 @@ popupForm.addEventListener('submit', async function (e) {
             phone: userForm.get('phone'),
             comment: userForm.get('comment')
         })
+    })
+    .then()
+    .catch(error => {
+        console.log(error);
     });
+    // const result = await response.json();
+    // console.log(result);
+}
 
-    console.log(response);
-
-    return false;
-});
+popupForm.addEventListener('submit', handleSubmit);
