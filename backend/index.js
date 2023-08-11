@@ -2,15 +2,18 @@ const express = require('express');
 const sqlite3 = require('sqlite3');
 const cors = require('cors');
 
-
 const db = new sqlite3.Database('db.sqlite3');
 const app = express();
 
+const corsOptions = {
+   origin : ['*'],
+}
+  
+app.use(cors(corsOptions))
 app.use(express.json());
-app.options('*', cors());
 
 
-app.post('/', async (req, res) => {
+app.post('/', cors(corsOptions), async (req, res) => {
     console.log('Request accepted!');
 
     db.serialize(() => {
@@ -19,7 +22,7 @@ app.post('/', async (req, res) => {
         stmt.finalize();
     });
 
-    res.json({
+    return res.json({
         status: 'ok',
         message: 'Ваши данные успешно записаны'
     })
