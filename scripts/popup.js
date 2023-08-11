@@ -30,7 +30,7 @@ const handleSubmit = async function (e) {
 
     const userForm = new FormData(popupForm);
 
-    await fetch('http://82.146.45.31/', {
+    await fetch('https://ruvemaximus1.fvds.ru/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
