@@ -32,7 +32,7 @@ body {
 
 main {
   width: min(1920px, 100%);
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 h1,
@@ -450,4 +450,20 @@ input[type='submit'] {
 }
 body{
     overflow-x:hidden;
+}
+
+#bot-link { 
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  height: 24px;
+  background-color: var(--color-blue);
+  width: 100%;
+  z-index: 10000;
+}
+
+#bot-link a {
+  color: white;
 }

@@ -1,5 +1,15 @@
 const popup = document.getElementById('popup');
 const popupForm = document.getElementById('signUpForm');
+const botLink = document.getElementById('bot-link');
+
+
+function checkSighUp() {
+    if ( localStorage.getItem('signedUp') ) {
+        botLink.style.display = 'block';
+    }
+}
+
+checkSighUp();
 
 
 document.querySelectorAll('.open-signup-popup').forEach(btn => { 
@@ -15,13 +25,15 @@ popup.querySelector('.close-popup').addEventListener('click', (e) => {
     document.body.classList.remove('with-popup');
 });
 
-const handleSubmit = async function (e = null) {
-    if (e) { e.preventDefault(); }
+const handleSubmit = async function (e) {
+    e.preventDefault();
+
     const userForm = new FormData(popupForm);
-    const response = await fetch('http://localhost:3000/', {
+
+    await fetch('http://82.146.45.31/', {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             name: userForm.get('name'),
@@ -30,12 +42,19 @@ const handleSubmit = async function (e = null) {
             comment: userForm.get('comment')
         })
     })
-    .then()
+    .then(response => {
+        response.json()
+            .then(data => {
+                localStorage.setItem('signedUp', true);
+                botLink.style.display = 'block';
+                console.log(data);
+            });
+    })
     .catch(error => {
         console.log(error);
     });
-    // const result = await response.json();
-    // console.log(result);
+
+    return false;
 }
 
 popupForm.addEventListener('submit', handleSubmit);

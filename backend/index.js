@@ -5,15 +5,11 @@ const cors = require('cors');
 const db = new sqlite3.Database('db.sqlite3');
 const app = express();
 
-const corsOptions = {
-   origin : ['*'],
-}
-  
-app.use(cors(corsOptions))
+app.use(cors({origin: true}));
 app.use(express.json());
 
 
-app.post('/', cors(corsOptions), async (req, res) => {
+app.post('/', async (req, res) => {
     console.log('Request accepted!');
 
     db.serialize(() => {
