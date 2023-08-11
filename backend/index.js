@@ -1,11 +1,9 @@
 const express = require('express');
 const sqlite3 = require('sqlite3');
-const cors = require('cors');
 
 const db = new sqlite3.Database('db.sqlite3');
 const app = express();
 
-app.use(cors({origin: true}));
 app.use(express.json());
 
 
