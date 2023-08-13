@@ -467,3 +467,6 @@ body{
 #bot-link a {
   color: white;
 }
+.hidden {
+  display:none !important;
+}

@@ -1,11 +1,17 @@
 const popup = document.getElementById('popup');
 const popupForm = document.getElementById('signUpForm');
 const botLink = document.getElementById('bot-link');
-
+const elem = document.querySelector('#text__form');
+const link = document.querySelector('.link__submit');
+const  heading = document.querySelector('.text__submit');
 
 function checkSighUp() {
     if ( localStorage.getItem('signedUp') ) {
-        botLink.style.display = 'block';
+        // botLink.style.display = 'block';
+        link.style.display = "block";
+        heading.style.display = "block"; 
+        elem.classList.add('hidden');
+        popupForm.classList.add('hidden');
     }
 }
 
@@ -46,7 +52,11 @@ const handleSubmit = async function (e) {
         response.json()
             .then(data => {
                 localStorage.setItem('signedUp', true);
-                botLink.style.display = 'block';
+                // botLink.style.display = 'block';
+                link.style.display = "block";
+                heading.style.display = "block"; 
+                elem.classList.add('hidden');
+                popupForm.classList.add('hidden');
                 console.log(data);
             });
     })
