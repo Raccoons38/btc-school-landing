@@ -781,12 +781,17 @@ body.with-popup::after {
     margin-top: 100px;
   }
 
+  section#reviews{
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .review-container{
     flex-direction: column;
   }
 
   .review-block{
-    width: 310px;
     min-height: fit-content;
     padding-top: 40px;
     padding-bottom: 40px;
