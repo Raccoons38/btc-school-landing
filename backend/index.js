@@ -19,7 +19,13 @@ app.post('/', async (req, res) => {
     return res.json({
         status: 'ok',
         message: 'Ваши данные успешно записаны'
-    })
-})
+    });
+});
+
+app.get('/', async (req, res) => { 
+    const stmt = db.all('SELECT DISTINCT * FROM users', [], (err, rows) => { 
+        return res.json(rows);
+    });
+});
 
 app.listen(3000);

@@ -3,12 +3,15 @@ const db = new sqlite3.Database('db.sqlite3');
 
 const stmt = `
     CREATE TABLE IF NOT EXISTS "users" (
-    "name"  TEXT,
-    "email"  TEXT,
-    "phone"  TEXT,
-    "comment"  TEXT
+        "name"  TEXT,
+        "email"  TEXT,
+        "phone"  TEXT,
+        "comment"  TEXT
+    );
+    CREATE TABLE IF NOT EXISTS "admins" (
+        "token" TEXT
     );
 `;
-db.run(stmt);
+db.exec(stmt);
 
 db.close();
