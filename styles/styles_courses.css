@@ -131,7 +131,6 @@ p.tag {
   width: auto;
   height: 800px;
   max-height: inherit;
-  filter: drop-shadow(0 0 150px #10d37a);
   -webkit-filter: drop-shadow(0 0 150px #10d37a);
 }
 
@@ -358,7 +357,6 @@ li.advantage img {
 }
 
 .full-price {
-  text-decoration: line-through solid #10d37a 3px;
   -webkit-text-decoration: line-through solid #10d37a 3px;
 }
 
