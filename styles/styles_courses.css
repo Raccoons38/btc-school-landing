@@ -358,10 +358,10 @@ li.advantage img {
 
 .full-price {
   text-decoration-color: #10d37a;
-  text-decoration-thickness: 7px;
+  text-decoration-thickness: 3px;
   text-decoration-line: line-through;
   -webkit-text-decoration-color: #10d37a;
-  -webkit-text-decoration-thickness: 7px;
+  -webkit-text-decoration-thickness: 3px;
   -webkit-text-decoration-line: line-through;
   /*text-decoration: line-through solid #10d37a 3px;*/
 }
@@ -665,7 +665,8 @@ body.with-popup::after {
 
   .for-who-list__text {
     font-size: calc((100vw - 360px) / (1280 - 480) * (40 - 14) + 14px);
-    margin-left: 0px;
+    margin-left: 10px;
+    margin-right: 30px;
   }
 
   .for-who-list__index {
