@@ -6,6 +6,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "init-db": "node init_db.js"
+    "initdb": "node init_db.js",
+    "dbshell": "sqlite3 db.sqlite3"
   }
 }
