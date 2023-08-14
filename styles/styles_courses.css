@@ -359,7 +359,7 @@ li.advantage img {
 .full-price {
   -webkit-text-decoration: 3px;
   -webkit-text-decoration-color: #10d37a;
-  -webkit-text-decoration-line: line-through;
+  -webkit-text-decoration-line: line-through #10d37a;
   /*text-decoration: line-through solid #10d37a 3px;*/
 }
 
