@@ -131,7 +131,8 @@ p.tag {
   width: auto;
   height: 800px;
   max-height: inherit;
-  /*filter: drop-shadow(0 0 150px #10d37a);*/
+  filter: drop-shadow(0 0 150px #10d37a);
+  -webkit-filter: drop-shadow(0 0 150px #10d37a);
 }
 
 #headline .subtitle {
