@@ -277,7 +277,7 @@ ul.vebinar-program li::before {
   display: flex;
   flex-direction: row;
   max-width: 500px;
-  height: 970px;
+  height: 1070px;
   background-color: #10D37A1A;
   padding: 3%;
   border: 3px solid #10d37a;
