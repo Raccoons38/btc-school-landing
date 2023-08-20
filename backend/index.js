@@ -23,9 +23,22 @@ app.post('/', async (req, res) => {
 });
 
 app.get('/', async (req, res) => { 
-    const stmt = db.all('SELECT DISTINCT * FROM users', [], (err, rows) => { 
-        return res.json(rows);
+    const token = req.query.token;
+
+    db.get('SELECT token FROM admins WHERE token=?', [token], (err, row) => {
+        console.log(err,row);
+        if (row === undefined) { 
+            return res.status(403).json({
+                status: 'error', 
+                message: 'Token invalid'
+            });
+        }
+
+        const stmt = db.all('SELECT DISTINCT * FROM users', [], (err, rows) => { 
+            return res.json(rows);
+        });
     });
+
 });
 
 app.listen(3000);
