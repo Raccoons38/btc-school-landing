@@ -1,22 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Панель администратора</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Стили для таблицы */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Arial';
+        }
+    
+        /* Стили для заголовков таблицы */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            text-align: left;
+        }
+    
+        /* Смена цвета строк в зависимости от четности */
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+    
+        /* Стили для ячеек таблицы */
+        td {
+            padding: 10px;
+        }
+        /* Стиль для колонки телефона */
+        td:nth-child(4) {
+            user-select: all;
+            cursor: pointer;
+        }
+        /* Стили для кнопки обновить */
+        .refresh-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
 </head>
 <body>
     <form id="getRecordsForm">
-        <input type="text" name="">
-        <input type="submit" value="Обновить">
+        <button class="refresh-button"><i class='bx bx-refresh bx-sm'></i></button>
     </form>
     <table id="records">
         <thead>
             <tr>
-                <td>Имя</td>
-                <td>Почта</td>
-                <td>Телефон</td>
-                <td>Комментарий</td>
+                <th>#</th>
+                <th>Имя</th>
+                <th>Почта</th>
+                <th>Телефон</th>
+                <th>Комментарий</th>
             </tr>
         </thead>
         <tbody>
@@ -33,20 +85,21 @@
             const response = await fetch('https://ruvemaximus1.fvds.ru/');
             if (response.status === 200) { 
                 const rows = await response.json();
+                let rowIndex = 1;
 
                 for (const {name, email, phone, comment} of rows) { 
                     const tableRow = document.createElement('tr');
 
                     tableRow.innerHTML = `
-                        <tr>
-                            <td>${name}</td>
-                            <td>${email}</td>
-                            <td>${phone}</td>
-                            <td>${comment}</td>
-                        </tr>
+                        <td>${rowIndex}</td>
+                        <td>${name}</td>
+                        <td>${email}</td>
+                        <td>${phone}</td>
+                        <td>${comment}</td>
                     `;
 
                     tableBody.append(tableRow);
+                    rowIndex++;
                 }
             }
             else {
