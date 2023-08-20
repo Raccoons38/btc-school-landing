@@ -26,14 +26,14 @@ app.get('/', async (req, res) => {
     const token = req.query.token;
 
     db.get('SELECT token FROM admins WHERE token=?', [token], (err, row) => {
-        console.log(err,row);
         if (row === undefined) { 
+            console.error('Request rejected for token=', token);
             return res.status(403).json({
                 status: 'error', 
                 message: 'Token invalid'
             });
         }
-
+        console.log('Request accepted for token=', token);
         const stmt = db.all('SELECT DISTINCT * FROM users', [], (err, rows) => { 
             return res.json(rows);
         });
