@@ -54,6 +54,18 @@
             justify-content: center;
             align-items: center;
         }
+        td:first-child { 
+            color: gray;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            display: inline-block;
+        }
 
     </style>
 </head>
@@ -93,7 +105,7 @@
                     tableRow.innerHTML = `
                         <td>${rowIndex}</td>
                         <td>${name}</td>
-                        <td>${email}</td>
+                        <td><a class="button" href="mailto:${email}">${email}</a></td>
                         <td>${phone}</td>
                         <td>${comment}</td>
                     `;
