@@ -79,9 +79,19 @@
         }
       }
 
+      var set = new Set();
+      set.add(3);
+      set.add(4);
+      set.add(7);
+
       for (let i = 3; i < quantity; i++) {
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        resultContainer.textContent += randomNumber + " ";
+        if (!set.has(randomNumber)) {
+          resultContainer.textContent += randomNumber + " ";
+          set.add(randomNumber);
+        } else {
+          i--;
+        }
       }
     }
   </script>
