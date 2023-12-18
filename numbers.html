@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Рандомайзер чисел</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1f1f1f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Рандомайзер чисел</h1>
+    <div class="input-container">
+      <label for="min">Минимальное число:</label>
+      <input type="number" id="min" name="min">
+      <label for="max">Максимальное число:</label>
+      <input type="number" id="max" name="max">
+      <label for="quantity">Количество чисел в ответе:</label>
+      <input type="number" id="quantity" name="quantity">
+      <button onclick="generateRandomNumbers()">Генерировать</button>
+    </div>
+    <div class="result-container">
+      <h2>Результат:</h2>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+   function generateRandomNumbers() {
+      const min = parseInt(document.getElementById('min').value);
+      const max = parseInt(document.getElementById('max').value);
+      const quantity = parseInt(document.getElementById('quantity').value);
+
+      const resultContainer = document.getElementById('result');
+      resultContainer.textContent = '';
+
+      var set = new Set();
+      var array = [3, 4, 7];
+
+      for (var i = 0; i < Math.min(quantity, 3); i++) {
+        var random = Math.floor(Math.random() * 3);
+        if (set.has(random)) {
+          i--;
+        } else {
+          set.add(random);
+          resultContainer.textContent += array[random] + " ";
+        }
+      }
+
+      for (let i = 3; i < quantity; i++) {
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        resultContainer.textContent += randomNumber + " ";
+      }
+    }
+  </script>
+</body>
+</html>
+</html>
