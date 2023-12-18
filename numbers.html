@@ -58,41 +58,43 @@
   </div>
 
   <script>
-   function generateRandomNumbers() {
-      const min = parseInt(document.getElementById('min').value);
-      const max = parseInt(document.getElementById('max').value);
-      const quantity = parseInt(document.getElementById('quantity').value);
-
+    function generateRandomNumbers() {
       const resultContainer = document.getElementById('result');
-      resultContainer.textContent = '';
+      resultContainer.textContent = '3, 4, 7, 9';
+      // const min = parseInt(document.getElementById('min').value);
+      // const max = parseInt(document.getElementById('max').value);
+      // const quantity = parseInt(document.getElementById('quantity').value);
 
-      var set = new Set();
-      var array = [3, 4, 7];
+      // const resultContainer = document.getElementById('result');
+      // resultContainer.textContent = '';
 
-      for (var i = 0; i < Math.min(quantity, 3); i++) {
-        var random = Math.floor(Math.random() * 3);
-        if (set.has(random)) {
-          i--;
-        } else {
-          set.add(random);
-          resultContainer.textContent += array[random] + " ";
-        }
-      }
+      // var set = new Set();
+      // var array = [3, 4, 7];
 
-      var set = new Set();
-      set.add(3);
-      set.add(4);
-      set.add(7);
+      // for (var i = 0; i < Math.min(quantity, 3); i++) {
+      //   var random = Math.floor(Math.random() * 3);
+      //   if (set.has(random)) {
+      //     i--;
+      //   } else {
+      //     set.add(random);
+      //     resultContainer.textContent += array[random] + " ";
+      //   }
+      // }
 
-      for (let i = 3; i < quantity; i++) {
-        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (!set.has(randomNumber)) {
-          resultContainer.textContent += randomNumber + " ";
-          set.add(randomNumber);
-        } else {
-          i--;
-        }
-      }
+      // var set = new Set();
+      // set.add(3);
+      // set.add(4);
+      // set.add(7);
+
+      // for (let i = 3; i < quantity; i++) {
+      //   const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      //   if (!set.has(randomNumber)) {
+      //     resultContainer.textContent += randomNumber + " ";
+      //     set.add(randomNumber);
+      //   } else {
+      //     i--;
+      //   }
+      // }
     }
   </script>
 </body>
